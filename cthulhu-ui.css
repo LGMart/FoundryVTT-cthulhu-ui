@@ -1,0 +1,821 @@
+body {
+cursor:url(/modules/cthulhu-ui/img/pointer.webp), auto;
+}
+
+/* i{
+color:black;
+text-shadow:3px 2px 2px #FFF;
+} */
+
+
+#logo {
+height:50px;
+width:100px;
+content:url("/modules/cthulhu-ui/img/eye.gif");
+}
+
+#players {
+width:100%!important;
+pointer-events:all;
+margin:0 5px 10px 15px;
+padding:0;
+}
+
+#pause {
+bottom:20%!important;
+background:none;
+}
+
+#pause figcaption {
+text-shadow:3px 4px 5px #000;
+}
+
+#pause img[src*="icons/svg/clockwork.svg"] {
+box-sizing:border-box;
+width:128px;
+height:128px;
+bottom:20%!important;
+padding-left:128px;
+background-size:100% 100%!important;
+background-image:url(/modules/cthulhu-ui/img/paused.webp);
+opacity:75%;
+}
+
+#combat-controls .combat-control {
+background-image:url(/modules/cthulhu-ui/img/key.webp);
+text-align:center;
+background-position:center!important;
+background-size:260px 100%!important;
+background-repeat:no-repeat;
+}
+
+#combat-popout .directory-list {
+font-size:x-small;
+background-repeat:no-repeat;
+background-size:100% 100%!important;
+background-image:url(/modules/cthulhu-ui/img/directory.webp)!important;
+}
+
+.fa-yin-yang:before {
+content:"\f6ad";
+color:#FFF!important;
+}
+
+#controls {
+opacity:75%;
+transition:2s;
+margin-top:75px;
+color:red !important;
+}
+
+#controls:hover {
+opacity:100%;
+transition:.5s;
+}
+
+#controls ol.main-controls {
+overflow:visible;
+}
+
+#controls > ol.main-controls > li.scene-control,#controls > ol.sub-controls > li {
+background-image:url(/modules/cthulhu-ui/img/key.webp) !important;
+background-size:100% 100% !important;
+color:red !important;
+width:35px;
+height:35px;
+font-size:15px;
+box-shadow:none;
+background-color:transparent;
+border-style:none;
+}
+
+#controls ol.control-tools > li.active,#controls ol.control-tools > li:hover {
+border:0 transparent red;
+}
+
+#controls ol .scene-control:not(.active),#controls ol .control-tool:not(.active) {
+transition:2s;
+opacity:25%;
+box-shadow:none;
+background-color:transparent;
+border-style:none;
+}
+
+#controls:hover ol .scene-control:not(.active),#controls:hover ol .control-tool:not(.active) {
+transition:.5s;
+opacity:100%;
+box-shadow:none;
+background-color:transparent;
+border-style:none;
+}
+
+#controls .coc7-menu,#controls:hover .coc7-menu {
+background-image:initial!important;
+background-size:initial!important;
+background-attachment:initial!important;
+background-origin:initial!important;
+background-clip:initial!important;
+background-color:transparent!important;
+border:0 solid!important;
+box-shadow:none!important;
+background:none!important;
+border-color:red!important;
+border-style:none!important;
+}
+
+#controls ol.sub-controls.active {
+opacity:100%;
+transition:2s;
+}
+
+#controls:hover ol.sub-controls.active {
+transition:.5s;
+opacity:100%;
+}
+
+#ui-top.offset {
+margin-left:-50px!important;
+}
+
+#navigation #nav-toggle {
+background-image:url(/modules/cthulhu-ui/img/key2.webp);
+background-size:100% 100%!important;
+}
+
+#navigation #scene-list .scene.view,#navigation #scene-list .scene.context {
+background-image:url(/modules/cthulhu-ui/img/key2.webp)!important;
+background-size:50% 100%!important;
+color:#FFF!important;
+background:left;
+background-position:center;
+}
+
+#navigation #scene-list .scene.gm {
+background-image:url(/modules/cthulhu-ui/img/key2.webp)!important;
+background-size:110% 100%!important;
+color:#FFF!important;
+background:left;
+background-position:center;
+border:0;
+}
+
+.scenes-sidebar .scene {
+--sidebar-scene-height:45px;
+margin:2px!important;
+}
+
+.scenes-sidebar .scene h3 {
+color:#FFF;
+line-height:40px;
+text-align:center;
+font-size:1.5em;
+font-weight:400;
+margin:0;
+}
+
+#sidebar {
+display:flex;
+flex-direction:column;
+flex-wrap:nowrap;
+position:fixed;
+right:5px;
+top:5px;
+width:330px!important;
+height:100%;
+overflow:hidden;
+border:0 solid transparent;
+border-image-source:url(/modules/cthulhu-ui/img/chat-screen.webp);
+border-image-slice:20 fill;
+background-position:center!important;
+background-size:80% 100%!important;
+background-repeat:no-repeat;
+margin:0;
+padding:0;
+}
+
+#sidebar.collapsed {
+transition:.5s;
+opacity:75px;
+width:80px!important;
+height:400px!important;
+padding-left:10px;
+border:10px solid transparent;
+border-image-source:url(/modules/cthulhu-ui/img/bg-message.jpg);
+border-image-slice:60 fill;
+background-position:center!important;
+background-size:100% 100%!important;
+background-repeat:no-repeat;
+}
+
+#sidebar.collapsed #sidebar-tabs {
+height:100%;
+}
+
+#sidebar-tabs {
+text-align:center;
+box-shadow:0 0 0 inset #7c7c7c40;
+background-color:#000;
+padding-bottom:2px;
+display:flex;
+flex-direction:row;
+flex-wrap:nowrap!important;
+justify-content:space-around;
+border-bottom:1px solid #686102;
+}
+
+#sidebar #sidebar-tabs>.item {
+line-height:0;
+}
+
+#sidebar-tabs > .item.active {
+box-shadow:0 0 5px inset #7c7c7c40;
+border:1px solid #00000080;
+}
+
+.tabs .item.active {
+text-shadow:0 0 10px #7c7c7c40;
+}
+
+#sidebar-tabs > a:nth-child(n):hover {
+text-shadow:0 0 2px #7c7c7c40;
+}
+
+.fa-caret-right {
+background-image:url(/modules/cthulhu-ui/img/right.webp)!important;
+width:25px;
+height:25px;
+display:inline-block!important;
+background-position:center!important;
+background-size:25px 25px!important;
+background-repeat:no-repeat;
+content:"";
+text-align:center;
+}
+
+.fa-caret-left {
+background-image:url(/modules/cthulhu-ui/img/left.webp)!important;
+width:25px;
+height:25px;
+display:inline-block!important;
+background-position:center!important;
+background-size:25px 25px!important;
+background-repeat:no-repeat;
+content:"";
+text-align:center;
+vertical-align:top;
+}
+
+.fa-caret-up {
+background-image:url(/modules/cthulhu-ui/img/up.webp)!important;
+width:25px;
+height:25px;
+display:inline-block!important;
+background-position:center!important;
+background-size:25px 25px!important;
+background-repeat:no-repeat;
+content:"";
+text-align:center;
+vertical-align:top;
+}
+
+.fa-caret-down {
+background-image:url(/modules/cthulhu-ui/img/down.webp)!important;
+width:25px;
+height:25px;
+display:inline-block!important;
+background-position:center!important;
+background-size:25px 25px!important;
+background-repeat:no-repeat;
+content:"";
+text-align:center;
+vertical-align:top;
+}
+
+#sidebar-tabs>.item {
+line-height:30px;
+border:0 solid #686102;
+padding-bottom:0;
+height:30px;
+}
+
+#sidebar-tabs>.item.active {
+color:#FFF;
+border:0 solid #686102;
+box-shadow:0 0 0 inset #7c7c7c40;
+}
+
+#sidebar.collapsed #sidebar-tabs>.item.active {
+border-bottom:0 solid #524601;
+}
+
+#sidebar #sidebar-tabs i.fa-comments {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/comments.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-swords {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/swords.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-map {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/map.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-user {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/user.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-suitcase {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/suitcase.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-book-open {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/book-open.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+.sidebar-tab .directory-list {
+font-size:small;
+}
+
+#sidebar #sidebar-tabs i.fa-th-list {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/th-list.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-cards {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/cards.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-music {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/music.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-code {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/code.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-atlas {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/atlas.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+#sidebar #sidebar-tabs i.fa-cogs {
+content:"";
+background-image:url(/modules/cthulhu-ui/img/cogs.webp)!important;
+width:25.6px!important;
+height:30px!important;
+display:inline-block!important;
+background-position:center!important;
+background-size:cover!important;
+}
+
+.directory .action-buttons button {
+background-color:#000;
+text-align:center;
+background-position:center!important;
+background-size:50% 50%!important;
+background-repeat:no-repeat;
+padding-top:2px;
+margin-top:2px;
+border:0 solid #b5b3a4;
+color:#FFF;
+width:auto;
+height:25px!important;
+flex-shrink:1;
+flex-grow:1;
+flex-basis:auto;
+text-shadow:1px 1px #000;
+}
+
+.message {
+font-family:Wendell v1;
+background-image:url(/modules/cthulhu-ui/img/bg-message.webp)!important;
+background-size:100% 100%;
+color:#333;
+border:0;
+}
+
+.message-sender {
+color:#000;
+font-size:15px;
+font-weight:700;
+}
+
+.flavor-text {
+font-family:Wendell v1;
+color:#000;
+}
+
+.rollh2 {
+font-family:Wendell v1;
+color:#006400;
+}
+
+.chat-message .message-content {
+margin-left:10px;
+margin-right:10px;
+}
+
+#chat-form {
+height:50px;
+flex:0 0 50px;
+margin:0 6px 6px;
+}
+
+#chat-message {
+background-image:url(/modules/cthulhu-ui/img/bg-chat.webp)!important;
+background-position:center!important;
+background-size:100% 100%!important;
+background-repeat:no-repeat!important;
+color:#FFF!important;
+}
+
+#chat-controls .roll-type-select {
+color:#FFF!important;
+text-align:left;
+margin-bottom:10px;
+background-color:#000;
+}
+
+#chat-log .message .message-header .message-sender {
+background-color:rgba(0,0,0,0)!important;
+}
+
+#chat-log .message.whisper {
+font-style:italic;
+}
+
+#chat-log .message.whisper .message-header .message-metadata::before {
+color:#585858;
+content:" (big Roll) ";
+float:left;
+}
+
+#chat-log .message.blind .message-header .message-metadata::before {
+color:#585858;
+content:" (Blind Roll) "!important;
+float:left;
+}
+
+.dice-roll .dice-formula,.dice-roll .dice-total {
+background:transparent;
+border:none;
+box-shadow:none;
+}
+
+.header-search {
+padding-bottom:8px;
+}
+
+.sidebar-tab .directory-footer button {
+background-image:url(/modules/cthulhu-ui/img/key2.webp);
+text-align:center;
+background-position:center!important;
+background-size:100% 100%!important;
+background-repeat:no-repeat;
+padding-top:5px;
+margin-top:5px;
+border:0 solid #b5b3a4;
+color:#000;
+width:100%;
+height:35px!important;
+flex-shrink:1;
+flex-grow:1;
+flex-basis:auto;
+text-shadow:2px 2px #000;
+}
+
+.create-entity button::after {
+content:"+ Entry";
+}
+
+.directory .directory-list {
+padding:10px!important;
+}
+
+.directory-item {
+background:url(/modules/cthulhu-ui/img/bg-message.webp);
+background-size:100% 100%;
+color:#000;
+font-weight:400;
+padding-left:15px;
+text-shadow:2px 2px 3px #FFF;
+}
+
+.folder-header {
+border:transparent;
+}
+
+.ownership-viewer {
+display:block!important;
+}
+
+#sidebar #sidebar-tabs i.fa-share-alt {
+color:#000!important;
+background:red!important;
+}
+
+.sidebar-tab .folder .folder-header {
+background:url(/modules/cthulhu-ui/img/key2.webp)!important;
+text-align:left!important;
+background-position:center!important;
+background-size:100% 100%!important;
+background-repeat:no-repeat!important;
+width:100%;
+height:35px!important;
+padding-top:5px;
+padding-bottom:5px;
+color:#000!important;
+font-size:1em;
+padding-left:35px!important;
+margin-right:0!important;
+text-shadow:2px 2px #FFF;
+}
+
+.sidebar-tab .directory-list .directory.item h3 {
+text-align:left!important;
+padding-left:25px;
+flex:unset;
+}
+
+.sidebar-tab .directory-list .directory-item h3,.sidebar-tab .directory-list .directory-item h4 {
+white-space:nowrap;
+overflow:hidden;
+flex:unset;
+margin:0;
+}
+
+#sidebar section.sidebar-directory ol.directory-list li.directory-item.folder header {
+align-items:baseline;
+text-align:left!important;
+padding-left:25px;
+color:red;
+}
+
+.subdirectory .folder {
+border-left:2px solid #585858!important;
+}
+
+li.folder > .folder-header h3 {
+color:#000;
+line-height:24px;
+margin:0;
+}
+
+li.folder>.folder-header .create-folder {
+text-align:right;
+color:#CCC;
+font-size:14px;
+padding-left:5px;
+}
+
+li.folder>.folder-header .create-entity {
+flex:unset;
+text-align:right;
+color:#CCC;
+font-size:14px;
+padding-left:5px;
+}
+
+#actors ol.directory-list {
+padding-left:10px;
+}
+
+#actors li.directory-item .document .actor {
+padding-left:30px!important;
+}
+
+.thumbnail {
+flex:0 0 10px!important;
+color:#000!important;
+}
+
+#compendium h3 {
+text-align:left;
+position:relative;
+height:35px!important;
+top:7px;
+padding-top:10px;
+padding-left:45px;
+background-image:url(/modules/cthulhu-ui/img/key2.webp)!important;
+background-position-x:0;
+background-size:100% 100%!important;
+background-position-y:0;
+background-position:initial;
+color:#eeede0;
+text-shadow:2px 2px 4px #000;
+}
+
+#compendium ol.compendium-list {
+padding-left:25px;
+}
+
+#compendium .compendium-footer {
+color:#fff;
+text-shadow:2px 2px 4px #000;
+}
+
+.fa-folder-plus:before {
+padding-left:10px;
+margin-top:7px;
+}
+
+.fa-user-plus:before {
+padding-left:15px;
+margin-top:7px;
+}
+
+.fa-atlas:before {
+padding-left:10px;
+margin-top:7px;
+vertical-align:middle;
+}
+
+.compendium-folder-header > .create-folder {
+color:#FFF;
+margin-top:7px;
+margin-right:5px;
+}
+
+li.compendium-folder > .compendium-folder-header .create-entity-c {
+margin-top:7px;
+}
+
+#hotbar {
+position:relative;
+left:170px;
+}
+
+#hotbar #action-bar {
+position:relative;
+}
+
+#action-bar:not(.collapsed)::before {
+position:absolute;
+z-index:-1;
+content:" ";
+width:146%;
+bottom:-10px;
+left:-23%;
+height:185px;
+background-image:url(/modules/cthulhu-ui/img/action_bar.webp);
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+
+#hotbar #action-bar .macro {
+border-radius:0;
+box-shadow:none;
+margin:0;
+}
+
+#hotbar #action-bar .macro::before {
+background-image:url(/modules/cthulhu-ui/img/key.webp);
+background-size:contain;
+background-repeat:no-repeat;
+position:absolute;
+content:" ";
+width:61px;
+height:78px;
+top:-11px;
+left:-9px;
+z-index:1;
+}
+
+#hotbar #action-bar .macro:hover::before {
+background-image:url(/modules/cthulhu-ui/img/macro.webp);
+}
+
+#hotbar .macro .macro-key {
+top:initial;
+bottom:2px;
+z-index:3;
+color:#837360;
+background:none;
+}
+
+#hotbar .macro .macro-icon {
+position:relative;
+z-index:2;
+}
+
+#hotbar #macro-list {
+grid-gap:8px;
+}
+
+#hotbar .bar-controls {
+color:#837360;
+background:none;
+border:none;
+box-shadow:none;
+}
+
+h3.noborder,.scene-name,.fa-lock:before,.fa-share-alt:before,.fa-share-nodes:before,.playlists-sidebar .sound-control {
+color:#000;
+}
+
+.collapsed::before,i.fa-caret-right::before,i.fa-caret-left::before,i.fa-caret-up::before,i.fa-caret-down::before,#sidebar #sidebar-tabs i.fa-comments::before,#sidebar #sidebar-tabs i.fa-swords::before,#sidebar #sidebar-tabs i.fa-map::before,#sidebar #sidebar-tabs i.fa-user::before,#sidebar #sidebar-tabs i.fa-suitcase::before,#sidebar #sidebar-tabs i.fa-book-open::before,#sidebar #sidebar-tabs i.fa-th-list::before,#sidebar #sidebar-tabs i.fa-cards::before,#sidebar #sidebar-tabs i.fa-music::before,#sidebar #sidebar-tabs i.fa-code::before,#sidebar #sidebar-tabs i.fa-atlas::before,#sidebar #sidebar-tabs i.fa-cogs::before {
+content:"";
+}
+
+.message-timestamp,#chat-controls .control-buttons {
+color:#FFF;
+}
+
+#sidebar .sidebar-tab #chat-controls div.roll-type-select select,.sidebar-tab .directory-header .header-search input {
+font-family:CaslonPro;
+font-weight:500;
+font-size:14px;
+text-align:left;
+position:relative;
+height:24px;
+top:7px;
+padding-top:3px;
+background:url(/modules/cthulhu-ui/img/bg-chat.webp) repeat;
+background-position-x:0;
+background-position-y:0;
+background-position:initial;
+box-shadow:inset 0 0 10px #000;
+border-image-width:4px;
+border-image-outset:3px 2px 2px 2px;
+color:#520000;
+}
+
+.fa-search,.fa-sort-amount-up {
+color:#B8860B;
+}
+
+.folder,.folder.collapsed {
+background:transparent!important;
+border:transparent;
+}
+
+.sidebar-tab .directory-footer button.create-entity,.sidebar-tab .directory-footer button.create-folder,.sidebar-tab .directory-footer button.quest-log-btn,.sidebar-tab .directory-footer button.create-pdf {
+width:100%;
+flex-shrink:1;
+flex-grow:1;
+flex-basis:auto;
+}

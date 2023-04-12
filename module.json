@@ -1,0 +1,28 @@
+{
+  "id": "cthulhu-ui",
+  "name": "cthulhu-ui",  
+  "title": "Cthulhu UI",
+  "description": "Cthulhu inpired UI",
+  "authors": [
+    {
+      "name": "Luiz Martinez",
+      "flags": {}
+    }
+  ],
+  "version": "0.1.3",  
+  "scripts": ["cthulhu-ui.js"],
+  "styles":  ["cthulhu-ui.css"],
+  "url": "https://github.com/LGMart/FoundryVTT/tree/main/cthulhu-ui",
+  "manifest": "https://raw.githubusercontent.com/LGMart/FoundryVTT/main/cthulhu-ui/module.json",
+  "download": "https://github.com/LGMart/FoundryVTT/raw/main/cthulhu-ui/cthulhu-ui.zip",
+
+  "authors": [
+    {
+      "name": "LGMart",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "verified": "10"
+  }
+}
