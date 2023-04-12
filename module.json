@@ -5,7 +5,7 @@
   "description": "Cthulhu inpired UI",
   "authors": [
     {
-      "name": "Luiz Martinez",
+      "name": "LGMart",
       "flags": {}
     }
   ],
@@ -16,12 +16,6 @@
   "manifest": "https://raw.githubusercontent.com/LGMart/FoundryVTT-cthulhu-ui/main/module.json",
   "download": "https://github.com/LGMart/FoundryVTT-cthulhu-ui/raw/main/cthulhu-ui.zip",
 
-  "authors": [
-    {
-      "name": "LGMart",
-      "flags": {}
-    }
-  ],
   "compatibility": {
     "verified": "10"
   }
